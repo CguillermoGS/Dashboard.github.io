@@ -1,6 +1,6 @@
 # Dashboard.github.io
 Proyecto numero 3 Dashboard
-Realizado por Carlos Guillermo Guzman Santiago utilizando UI(HTML5, CSS & CHART JS), JS(Fetch, asyn await)
+Realizado por Carlos Guillermo Guzman Santiago de formal individual utilizando UI(HTML5, CSS & CHART JS), JS(Fetch, asyn await)
 Descripción:
 Dashboard de clima en el que se puede visualizar el clima y sus principales atributos de la ciudad que se desee tecleandola en la barra de busqueda y apretando enter
 junto con una grafica en la que se compara la temperatura maxima y la temperatura minima de la ciudad especificada.
