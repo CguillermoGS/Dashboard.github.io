@@ -9,7 +9,9 @@ let weather = {
     )
     .then((response) => response.json())
     .then((data)=> this.displayWheather(data));
-
+    const temp_max = [];
+    const temp_min = [];
+    const temp = [];
   },
   displayWheather:function(data){
    const { name } = data;
@@ -48,16 +50,17 @@ if(event.key == "Enter"){
 weather.fetchWeather("Guadalajara");
 
 //GRAFICA
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
+const xlabels = [];
 const myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['MAX', 'MIN'],
         datasets: [{
             label: 'Temperatura Maxima y Minima',
-            data: [12, 19, 3, 5, 2, 3],
+           data: [0, 0],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+               'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
@@ -73,14 +76,13 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        }]
-    },
+       }]
+   },
     options: {
-        scales: {
+     scales: {
             y: {
                 beginAtZero: true
             }
-        }
+     }
     }
 });
-
