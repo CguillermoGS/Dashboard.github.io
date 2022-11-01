@@ -9,9 +9,7 @@ let weather = {
     )
     .then((response) => response.json())
     .then((data)=> this.displayWheather(data));
-    const temp_max = [];
-    const temp_min = [];
-    const temp = [];
+    
   },
   displayWheather:function(data){
    const { name } = data;
@@ -19,14 +17,14 @@ let weather = {
    const {temp, humidity, temp_min, temp_max } = data.main;
    const {speed} =data.wind;
    console.log(name,icon,description,temp,humidity,temp_min,temp_max,speed)
-   document.querySelector(".city").innerText = "Weather in " + name;
+   document.querySelector(".city").innerText = "Clima en " + name;
    document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
    document.querySelector(".description").innerText = description;
    document.querySelector(".temp").innerText = temp + "°C";
-   document.querySelector(".humidity").innerText = "Humidity: "+ humidity + "%" ;
+   document.querySelector(".humidity").innerText = "Humedad: "+ humidity + "%" ;
    document.querySelector(".tempmin").innerText = "Temp min: "+ temp_min + "°" ;
    document.querySelector(".tempmax").innerText = "Temp max: "+ temp_max + "°" ;
-   document.querySelector(".wind").innerText = "Wind speed " + speed + "KM/H";
+   document.querySelector(".wind").innerText = "Velocidad del viento " + speed + "KM/H";
    document.querySelector(".weather").classList.remove("loading");
    document.body.style.backgroundImage= "url('https://source.unsplash.com/1600x900/?" + name + "')";
 
@@ -47,9 +45,10 @@ if(event.key == "Enter"){
    weather.search(); 
 }
 });
-weather.fetchWeather("Guadalajara");
+weather.fetchWeather(" ");
 
 //GRAFICA
+
 const ctx = document.getElementById('myChart').getContext('2d');
 const xlabels = [];
 const myChart = new Chart(ctx, {
@@ -58,7 +57,7 @@ const myChart = new Chart(ctx, {
         labels: ['MAX', 'MIN'],
         datasets: [{
             label: 'Temperatura Maxima y Minima',
-           data: [0, 0],
+           data: [28, 32],
             backgroundColor: [
                'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
