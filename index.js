@@ -57,7 +57,7 @@ const myChart = new Chart(ctx, {
         labels: ['MAX', 'MIN'],
         datasets: [{
             label: 'Temperatura Maxima y Minima',
-           data: [28, 32],
+           data: [29, 31],
             backgroundColor: [
                'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
